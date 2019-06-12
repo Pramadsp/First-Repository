@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+
+    <form name="konten">
+        <input type="text" id="celcius" placeholder="Masukkan angka celcius nya">
+        <select name="konversi" id="Konversi">
+            <option value="fahreinheit">Fahreinheit</option>
+            <option value="reamur">Reamur</option>
+            <option value="kelvin">Kelvin</option>
+        </select>
+        <input type="button" value="=" onclick="total()">
+        <input type="text" id="Hasil" name="hasil" placeholder="Hasil" disabled>
+    </form>
+
+    <script>
+        function total() {
+
+            var jumlah = document.konten.konversi.value;
+
+            // eval berfungsi untuk konversi/mengubah string/huruf menjadi angka/integer
+            var a = eval(document.getElementById("celcius").value);
+
+            if (jumlah == "fahreinheit") {
+                var hsl = 9 / 5 * (a + 32);
+            } else if (jumlah == "reamur") {
+                var hsl = 4 / 5 * a;
+            } else if (jumlah == "kelvin") {
+                var hsl = a + 273;
+            } else {
+                alert("Pilih dengan benar")
+            }
+
+            document.konten.hasil.value = eval(hsl);
+        }
+    </script>
+
+</body>
+
+</html>
